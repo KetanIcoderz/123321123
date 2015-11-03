@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  Hang
+//
+//  Created by iCoderz_Ankit on 9/10/15.
+//  Copyright (c) 2015 iCoderz. All rights reserved.
+//
+
+#ifndef Hang_PrefixHeader_pch
+#define Hang_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppDelegate.h"
+#import "SWRevealViewController.h"
+#import "UIImageView+WebCache.h"
+#import "WebNetworking.h"
+#import "UserObject.h"
+#import "SVProgressHUD.h"
+#import "JSON.h"
+
+#define appName @"Hang"
+#define appDelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
+#define appBaseURL @"http://mobappbuddy.com/icoderz_dev/phpwork/manoj/Hang/webservice"
+
+#define makeUserURL(name) [NSString stringWithFormat:@"%@/HangUserServices.php?action=%@",appBaseURL,@#name]
+#define makeEventURL(name) [NSString stringWithFormat:@"%@/EventServices.php?action=%@",appBaseURL,@#name]
+#define makeHangURL(name) [NSString stringWithFormat:@"%@/HangServices.php?action=%@",appBaseURL,@#name]
+
+//#define makeUserImageURL(name) [NSURL URLWithString:[NSString stringWithFormat:@"%@/Images/User/%@",appBaseURL,name]]
+//#define makeEventImageURL(name) [NSURL URLWithString:[NSString stringWithFormat:@"%@/Images/Event/%@",appBaseURL,name]]
+
+#define kOrangeColor [UIColor colorWithRed:252.0/255.0 green:102.0/255.0 blue:33.0/255.0 alpha:1.0]
+#define kBlueColor [UIColor colorWithRed:65.0/255.0 green:125.0/255.0 blue:177.0/255.0 alpha:1.0]
+#define kFontOpenSans @"OpenSans-Semibold"
+
+
+#define keyboardHeight (self.view.frame.size.height == 736)?226:216
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define previousViewController [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2]
+#define ShowAlert(m) [[[UIAlertView alloc]initWithTitle:appName message:@#m delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
+
+
+#pragma mark - Keys
+
+#define key_indexWeekStart @"indexWeekStart"
+#define key_indexAlert @"indexAlert"
+
+#endif
